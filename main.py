@@ -82,7 +82,7 @@ while not game_over: # Mientras game_over sea False se repite el while
             if event.key == pygame.K_DOWN and player1_y_coor < screen_size_height - 5:
                 player2_y_speed = 3
 
-        if event.type == pygame.KEYUP: 
+        if event.type == pygame.KEYUP:
             # Moviemiento Jugador 1
             if event.key == pygame.K_w:
                 player1_y_speed = 0
@@ -114,7 +114,7 @@ while not game_over: # Mientras game_over sea False se repite el while
         # Si sale de la pantalla, invierte dirección
         pelota_speed_x *= -1
         pelota_speed_y *= -1
-    
+
     # Incremeto marcador
     if pelota_x > screen_size_width - 5:
         sound_punto()
@@ -131,7 +131,7 @@ while not game_over: # Mientras game_over sea False se repite el while
         pelota_speed_x = 0
         pelota_speed_y = 0
 
-    # Modifica las coordenadas para dar mov. a los jugadores/pelota.    
+    # Modifica las coordenadas para dar mov. a los jugadores/pelota.
     player2_y_coor += player2_y_speed
     player1_y_coor += player1_y_speed
 
@@ -141,7 +141,7 @@ while not game_over: # Mientras game_over sea False se repite el while
 
     # Para evitar que los jugadores salgan de la ventana
     if player1_y_coor < 5 or player1_y_coor + player_height > screen_size_height - 5:
-        player1_y_speed = 0        
+        player1_y_speed = 0
 
     if player2_y_coor < 5 or player2_y_coor + player_height > screen_size_height - 5:
         player2_y_speed = 0
@@ -159,7 +159,7 @@ while not game_over: # Mientras game_over sea False se repite el while
     # Muestra el texto antes de empezar a jugar
     if pelota_speed_y == 0:
         text_star = myfont.render("PRESS SPACE KEY TO PLAY", False, WHITE)
-        screen.blit(text_star, (screen_size_width / 2 - text_star.get_rect().width / 2, screen_size_height / 3 - text_star.get_rect().height / 2))    
+        screen.blit(text_star, (screen_size_width / 2 - text_star.get_rect().width / 2, screen_size_height / 3 - text_star.get_rect().height / 2))
 
     # Colisiones pelota
     if pelota.colliderect(jugador1):
